@@ -1,8 +1,7 @@
 package Inter2022;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class atvB {
@@ -19,18 +18,12 @@ public class atvB {
 		 int E = Integer.parseInt(linha[1]);
 		 
 		 // matriz contato e lista inseguro
-		 ArrayList<Object> ctt = new ArrayList<>();
-		 
-		 // inicializando matriz
-		 for (int i = 0; i < P; i++) {
-			 	ctt.add(new ArrayList<>());
-			}
+		 int [][] ctt = new int[P][P];
 		 
 		 // contadores comandC e contact
 		 int comandC = 0, contact = 0;
 		 
 		 // loop com E entradas
-		 
 		 do {
 			// armazena cada linha
 			System.out.print("");
@@ -46,8 +39,9 @@ public class atvB {
 					int A = Integer.parseInt(linhas[1]);
 					int B = Integer.parseInt(linhas[2]);
 					 
-					((ArrayList<Integer>) ctt.get(A-1)).add(B);
-					((ArrayList<Integer>) ctt.get(B-1)).add(A);
+					ctt[A-1][B-1] = B;
+					ctt[B-1][A-1] = A;
+
 				break;
 				
 				case "p":
@@ -55,14 +49,13 @@ public class atvB {
 					
 					for (int i = 0; i < P; i++) {
 						
-					}
-					
-					for (int i = 0; i < ; i++) {
-						for (int j = 0; j < P-1; j++) {
-							int aux = (int) ((ArrayList<Object>) ctt.get(i)).get(j);
-							System.out.print(aux);
+						for (int element : ctt[i]) {
+							if (element == D){
+								System.out.println((i+1)+"sim");
+						    }
 						}
 					}
+					
 				break;
 				
 				case "n":
