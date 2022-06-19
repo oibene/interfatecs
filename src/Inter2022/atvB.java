@@ -1,5 +1,6 @@
 package Inter2022;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class atvB {
@@ -16,7 +17,7 @@ public class atvB {
 		 int E = Integer.parseInt(linha[1]);
 		 
 		 // matriz contato e lista inseguro
-		 
+		 HashMap<Integer, Integer> ctt = new HashMap<Integer, Integer>();
 		 
 		 // contadores comandC e contact
 		 int comandC = 0, contact = 0;
@@ -34,6 +35,14 @@ public class atvB {
 			switch(C) {
 				case "c":
 					comandC++;
+					
+					int A = Integer.parseInt(linhas[1]);
+					int B = Integer.parseInt(linhas[2]);
+					 
+					ctt.put(A, B);
+					ctt.put(B, A);
+					
+					System.out.println(ctt);
 				break;
 				
 				case "p":
