@@ -18,7 +18,8 @@ public class atvB {
 		 int E = Integer.parseInt(linha[1]);
 		 
 		 // matriz contato e lista inseguro
-		 int [][] ctt = new int[P][P];
+		 int[][] ctt = new int[P][P];
+		 int [] isg;
 		 
 		 // contadores comandC e contact
 		 int comandC = 0, contact = 0;
@@ -51,8 +52,9 @@ public class atvB {
 						
 						for (int element : ctt[i]) {
 							if (element == D){
-								System.out.println((i+1)+"sim");
+								isg = ctt[i];
 						    }
+							System.out.print(isg[i]); //arrumar
 						}
 					}
 					
