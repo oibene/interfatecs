@@ -1,6 +1,8 @@
 package Inter2022;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 
 public class atvB {
@@ -17,7 +19,12 @@ public class atvB {
 		 int E = Integer.parseInt(linha[1]);
 		 
 		 // matriz contato e lista inseguro
-		 HashMap<Integer, Integer> ctt = new HashMap<Integer, Integer>();
+		 ArrayList<Object> ctt = new ArrayList<>();
+		 
+		 // inicializando matriz
+		 for (int i = 0; i < P; i++) {
+			 	ctt.add(new ArrayList<>());
+			}
 		 
 		 // contadores comandC e contact
 		 int comandC = 0, contact = 0;
@@ -39,18 +46,27 @@ public class atvB {
 					int A = Integer.parseInt(linhas[1]);
 					int B = Integer.parseInt(linhas[2]);
 					 
-					ctt.put(A, B);
-					ctt.put(B, A);
-					
-					System.out.println(ctt);
+					((ArrayList<Integer>) ctt.get(A-1)).add(B);
+					((ArrayList<Integer>) ctt.get(B-1)).add(A);
 				break;
 				
 				case "p":
-					comandC++;
+					int D = Integer.parseInt(linhas[1]);
+					
+					for (int i = 0; i < P; i++) {
+						
+					}
+					
+					for (int i = 0; i < ; i++) {
+						for (int j = 0; j < P-1; j++) {
+							int aux = (int) ((ArrayList<Object>) ctt.get(i)).get(j);
+							System.out.print(aux);
+						}
+					}
 				break;
 				
 				case "n":
-					comandC++;
+					System.out.println(P-comandC);
 				break;
 				
 				case "ns":
